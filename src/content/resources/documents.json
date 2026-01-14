@@ -1,0 +1,28 @@
+{
+  "documents": [
+    {
+      "title": "DTM - IUCRC Bylaws (DRAFT)",
+      "description": "Draft bylaws document outlining the governance structure and operational procedures for the Digital Twin Manufacturing IUCRC.",
+      "url": "#",
+      "linkText": "Download PDF"
+    },
+    {
+      "title": "DTM - Operations Manual (DRAFT)",
+      "description": "Draft operations manual providing detailed procedures and guidelines for center operations and research activities.",
+      "url": "#",
+      "linkText": "Download PDF"
+    },
+    {
+      "title": "Digital Twins and AI in Semiconductor Manufacturing",
+      "description": "Comprehensive report on the applications of digital twin technologies and artificial intelligence in semiconductor manufacturing processes.",
+      "url": "#",
+      "linkText": "Download Document"
+    },
+    {
+      "title": "NIST-AI Roadmap - Semiconductor",
+      "description": "NIST artificial intelligence roadmap specifically focused on semiconductor manufacturing applications and standards.",
+      "url": "#",
+      "linkText": "Download PDF"
+    }
+  ]
+}

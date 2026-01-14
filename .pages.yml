@@ -1,0 +1,185 @@
+media:
+  - name: images
+    label: Images
+    input: public/images
+    output: /images
+    categories: [image]
+
+content:
+  # Center Leadership
+  - name: leadership
+    label: Center Leadership
+    type: file
+    path: src/content/faculty/leadership.json
+    fields:
+      - name: universities
+        label: Universities
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: University Name
+            type: string
+            required: true
+          - name: shortName
+            label: Short Name (UM, ASU)
+            type: string
+          - name: location
+            label: Location
+            type: string
+          - name: color
+            label: Brand Color Class
+            type: string
+          - name: leaders
+            label: Leaders
+            type: object
+            list: true
+            fields:
+              - name: name
+                label: Full Name
+                type: string
+                required: true
+              - name: title
+                label: Title/Position
+                type: string
+              - name: description
+                label: Description
+                type: text
+              - name: email
+                label: Email
+                type: string
+              - name: image
+                label: Photo
+                type: image
+              - name: role
+                label: Role
+                type: select
+                options:
+                  - primary
+                  - secondary
+                  - other
+
+  # Research Faculty
+  - name: research-faculty
+    label: Research Faculty
+    type: file
+    path: src/content/faculty/research-faculty.json
+    fields:
+      - name: faculty
+        label: Faculty Members
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Full Name
+            type: string
+            required: true
+          - name: university
+            label: University
+            type: select
+            options:
+              - University of Michigan
+              - Arizona State University
+          - name: researchFocus
+            label: Research Focus
+            type: text
+          - name: website
+            label: Website URL
+            type: string
+
+  # Publications
+  - name: publications
+    label: Publications
+    type: file
+    path: src/content/resources/publications.json
+    fields:
+      - name: publications
+        label: Publications
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: authors
+            label: Authors
+            type: string
+          - name: abstract
+            label: Abstract
+            type: text
+          - name: venue
+            label: Venue/Journal
+            type: string
+          - name: date
+            label: Publication Date
+            type: string
+          - name: url
+            label: Paper URL
+            type: string
+          - name: tags
+            label: Tags
+            type: string
+            list: true
+          - name: featured
+            label: Featured
+            type: boolean
+
+  # Project Resources
+  - name: project-resources
+    label: Project Resources
+    type: file
+    path: src/content/resources/project-resources.json
+    fields:
+      - name: resources
+        label: Resources
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: subtitle
+            label: Subtitle
+            type: string
+          - name: description
+            label: Description
+            type: text
+          - name: url
+            label: Link URL
+            type: string
+          - name: linkText
+            label: Link Text
+            type: string
+          - name: icon
+            label: Icon Name
+            type: string
+          - name: color
+            label: Color Class
+            type: string
+
+  # Documents & Reports
+  - name: documents
+    label: Documents & Reports
+    type: file
+    path: src/content/resources/documents.json
+    fields:
+      - name: documents
+        label: Documents
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: description
+            label: Description
+            type: text
+          - name: url
+            label: Download URL
+            type: string
+          - name: linkText
+            label: Link Text
+            type: string

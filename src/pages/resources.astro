@@ -1,9 +1,34 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import publicationsData from '../content/resources/publications.json';
+import projectResourcesData from '../content/resources/project-resources.json';
+import documentsData from '../content/resources/documents.json';
+
+// Helper function to get icon emoji based on icon name
+function getIcon(iconName: string): string {
+  const icons: Record<string, string> = {
+    'clipboard': '📋',
+    'chart': '📊',
+    'target': '🎯',
+    'rocket': '🚀'
+  };
+  return icons[iconName] || '📄';
+}
+
+// Helper function to get background color class
+function getBgColor(colorClass: string): string {
+  const colors: Record<string, string> = {
+    'dtc-primary': 'bg-dtc-primary',
+    'dtc-secondary': 'bg-dtc-secondary',
+    'dtc-accent': 'bg-dtc-accent',
+    'gray-600': 'bg-gray-600'
+  };
+  return colors[colorClass] || 'bg-gray-600';
+}
 ---
 
 <MainLayout title="Resources - Digital Twin Center">
-  
+
   <!-- Header -->
   <section class="max-w-6xl mx-auto px-4 py-16">
     <div class="text-center mb-12">
@@ -26,19 +51,19 @@ import MainLayout from '../layouts/MainLayout.astro';
           <h3 class="text-xl font-bold mb-2">Publications</h3>
           <p class="text-sm opacity-90">Research papers and articles</p>
         </a>
-        
+
         <a href="#tools" class="no-underline card-base surface-dtc-secondary p-6 text-center group">
           <div class="text-4xl mb-4">📋</div>
           <h3 class="text-xl font-bold mb-2">Project Resources</h3>
           <p class="text-sm opacity-90">Project summaries and materials</p>
         </a>
-        
+
         <a href="#documents" class="no-underline card-base surface-dtc-accent p-6 text-center group">
           <div class="text-4xl mb-4">📄</div>
           <h3 class="text-xl font-bold mb-2">Documents & Reports</h3>
           <p class="text-sm opacity-90">Official documents and research reports</p>
         </a>
-        
+
       </div>
     </div>
   </section>
@@ -50,80 +75,27 @@ import MainLayout from '../layouts/MainLayout.astro';
       <h2 class="text-3xl font-bold font-roboto-condensed mb-8">
         <span class="dtc-primary">Project</span> Resources
       </h2>
-      
+
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="surface p-6 rounded-lg">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-12 h-12 bg-dtc-primary rounded-lg flex items-center justify-center">
-              <span class="text-white font-bold">📋</span>
+        {projectResourcesData.resources.map((resource) => (
+          <div class="surface p-6 rounded-lg">
+            <div class="flex items-center gap-4 mb-4">
+              <div class={`w-12 h-12 ${getBgColor(resource.color)} rounded-lg flex items-center justify-center`}>
+                <span class="text-white font-bold">{getIcon(resource.icon)}</span>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold">{resource.title}</h3>
+                <p class="text-sm text-gray-500">{resource.subtitle}</p>
+              </div>
             </div>
-            <div>
-              <h3 class="text-xl font-bold">Digital Twins Project Summaries</h3>
-              <p class="text-sm text-gray-500">Project overview document</p>
-            </div>
-          </div>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">
-            Comprehensive overview of current digital twin projects and research initiatives within the center.
-          </p>
-          <div class="flex gap-4">
-            <a href="https://drive.google.com/open?id=1ykwJwbtiZhgB_LQ4_lvWt-gDtwY0x-22H9ougrOzFTo" target="_blank" class="text-dtc-primary hover:underline">View Document</a>
-            <!-- TODO: Add remaining Google Drive links for other resources -->
-          </div>
-        </div>
-        
-        <div class="surface p-6 rounded-lg">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-12 h-12 bg-dtc-secondary rounded-lg flex items-center justify-center">
-              <span class="text-white font-bold">📊</span>
-            </div>
-            <div>
-              <h3 class="text-xl font-bold">IUCRC Details</h3>
-              <p class="text-sm text-gray-500">Center information</p>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              {resource.description}
+            </p>
+            <div class="flex gap-4">
+              <a href={resource.url} target="_blank" class="text-dtc-primary hover:underline">{resource.linkText}</a>
             </div>
           </div>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">
-            Detailed information about the Industry-University Cooperative Research Center structure and operations.
-          </p>
-          <div class="flex gap-4">
-            <a href="#" class="text-dtc-primary hover:underline">Download PDF</a>
-          </div>
-        </div>
-        
-        <div class="surface p-6 rounded-lg">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-12 h-12 bg-dtc-accent rounded-lg flex items-center justify-center">
-              <span class="text-white font-bold">🎯</span>
-            </div>
-            <div>
-              <h3 class="text-xl font-bold">Digital Twin Framework Keynote</h3>
-              <p class="text-sm text-gray-500">Presentation materials</p>
-            </div>
-          </div>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">
-            Keynote presentation covering the digital twin framework development and implementation strategies.
-          </p>
-          <div class="flex gap-4">
-            <a href="#" class="text-dtc-primary hover:underline">Download Slides</a>
-          </div>
-        </div>
-        
-        <div class="surface p-6 rounded-lg">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-12 h-12 bg-gray-600 rounded-lg flex items-center justify-center">
-              <span class="text-white font-bold">🚀</span>
-            </div>
-            <div>
-              <h3 class="text-xl font-bold">DT-IUCRC Proposal Kickoff</h3>
-              <p class="text-sm text-gray-500">Project launch materials</p>
-            </div>
-          </div>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">
-            Initial proposal and kickoff materials for the Digital Twin Industry-University Cooperative Research Center.
-          </p>
-          <div class="flex gap-4">
-            <a href="#" class="text-dtc-primary hover:underline">View Proposal</a>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   </section>
@@ -134,39 +106,17 @@ import MainLayout from '../layouts/MainLayout.astro';
     <h2 class="text-3xl font-bold font-roboto-condensed mb-8">
       <span class="dtc-primary">Documents</span> & Reports
     </h2>
-    
+
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="surface p-6 rounded-lg">
-        <h3 class="text-xl font-bold mb-3">DTM - IUCRC Bylaws (DRAFT)</h3>
-        <p class="text-gray-600 dark:text-gray-300 mb-4">
-          Draft bylaws document outlining the governance structure and operational procedures for the Digital Twin Manufacturing IUCRC.
-        </p>
-        <a href="#" class="text-dtc-primary hover:underline">Download PDF</a>
-      </div>
-      
-      <div class="surface p-6 rounded-lg">
-        <h3 class="text-xl font-bold mb-3">DTM - Operations Manual (DRAFT)</h3>
-        <p class="text-gray-600 dark:text-gray-300 mb-4">
-          Draft operations manual providing detailed procedures and guidelines for center operations and research activities.
-        </p>
-        <a href="#" class="text-dtc-primary hover:underline">Download PDF</a>
-      </div>
-      
-      <div class="surface p-6 rounded-lg">
-        <h3 class="text-xl font-bold mb-3">Digital Twins and AI in Semiconductor Manufacturing</h3>
-        <p class="text-gray-600 dark:text-gray-300 mb-4">
-          Comprehensive report on the applications of digital twin technologies and artificial intelligence in semiconductor manufacturing processes.
-        </p>
-        <a href="#" class="text-dtc-primary hover:underline">Download Document</a>
-      </div>
-      
-      <div class="surface p-6 rounded-lg">
-        <h3 class="text-xl font-bold mb-3">NIST-AI Roadmap - Semiconductor</h3>
-        <p class="text-gray-600 dark:text-gray-300 mb-4">
-          NIST artificial intelligence roadmap specifically focused on semiconductor manufacturing applications and standards.
-        </p>
-        <a href="#" class="text-dtc-primary hover:underline">Download PDF</a>
-      </div>
+      {documentsData.documents.map((doc) => (
+        <div class="surface p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-3">{doc.title}</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            {doc.description}
+          </p>
+          <a href={doc.url} class="text-dtc-primary hover:underline">{doc.linkText}</a>
+        </div>
+      ))}
     </div>
     </div>
   </section>
@@ -177,163 +127,26 @@ import MainLayout from '../layouts/MainLayout.astro';
     <h2 class="text-3xl font-bold font-roboto-condensed mb-8">
       <span class="dtc-primary">Publications</span> & Research
     </h2>
-    
+
     <div class="space-y-6">
-      <div class="surface p-6 rounded-lg border-l-4 border-dtc-primary">
-        <h3 class="text-xl font-bold mb-2">A Requirements Driven Digital Twin Framework: Specification and Opportunities</h3>
-        <p class="text-sm text-gray-500 dark:text-gray-400 mb-2 italic">
-          J. Moyne, Y. Qamsane, E. C. Balta, I. Kovalenko, J. Faris, K. Barton, and D. M. Tilbury
-        </p>
-        <p class="text-gray-600 dark:text-gray-300 mb-3">
-          A set of requirements for a Digital Twin (DT) framework has been derived from analysis of DT definitions, DTs in use today, expected DT applications in the near future, and longer-term DT trends and the DT vision in Smart Manufacturing. These requirements include elements of re-usability, interoperability, interchangeability, maintainability, extensibility, and autonomy across the entire DT lifecycle.
-        </p>
-        <div class="flex flex-wrap gap-4 text-sm">
-          <span class="bg-dtc-primary text-white px-3 py-1 rounded-full">IEEE Access</span>
-          <span class="text-gray-500">8:107781–107801, June 2020</span>
-          <a href="https://ieeexplore.ieee.org/document/9109299" class="text-dtc-primary hover:underline">View Paper</a>
+      {publicationsData.publications.map((pub) => (
+        <div class={`surface p-6 rounded-lg border-l-4 ${pub.featured ? 'border-dtc-primary' : 'border-gray-400'}`}>
+          <h3 class="text-xl font-bold mb-2">{pub.title}</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-2 italic">
+            {pub.authors}
+          </p>
+          <p class="text-gray-600 dark:text-gray-300 mb-3">
+            {pub.abstract}
+          </p>
+          <div class="flex flex-wrap gap-4 text-sm">
+            {pub.tags.map((tag) => (
+              <span class={`${tag.includes('Joint work') ? 'bg-dtc-primary' : 'bg-gray-600'} text-white px-3 py-1 rounded-full`}>{tag}</span>
+            ))}
+            <span class="text-gray-500">{pub.date}</span>
+            <a href={pub.url} target="_blank" class="text-dtc-primary hover:underline">View Paper</a>
+          </div>
         </div>
-      </div>
-      
-      <div class="surface p-6 rounded-lg border-l-4 border-gray-400">
-        <h3 class="text-xl font-bold mb-2">A Methodology to Develop and Implement Digital Twin Solutions for Manufacturing Systems</h3>
-        <p class="text-sm text-gray-500 dark:text-gray-400 mb-2 italic">
-          Y. Qamsane, J. Moyne, M. Toothman, I. Kovalenko, E. C. Balta, J. Faris, D. M. Tilbury, and K. Barton
-        </p>
-        <p class="text-gray-600 dark:text-gray-300 mb-3">
-          This paper introduces a Digital Twin (DT) solution development methodology as a generic procedure for analyzing and developing DTs for manufacturing systems. A case study illustrates the advantages of the proposed methodology in supporting manufacturing DT solutions.
-        </p>
-        <div class="flex flex-wrap gap-4 text-sm">
-          <span class="bg-gray-600 text-white px-3 py-1 rounded-full">IEEE Access</span>
-          <span class="text-gray-500">9(44247 – 44265), March 2021</span>
-          <a href="https://ieeexplore.ieee.org/document/9381733" target="_blank" class="text-dtc-primary hover:underline">View Paper</a>
-        </div>
-      </div>
-      
-      <div class="surface p-6 rounded-lg border-l-4 border-gray-400">
-        <h3 class="text-xl font-bold mb-2">An Adaptive, State-Based Framework for Fault Prediction in Rotating Equipment</h3>
-        <p class="text-sm text-gray-500 dark:text-gray-400 mb-2 italic">
-          M. Toothman, B. Braun, S. J. Bury, J. Moyne, D. M. Tilbury, K. Barton
-        </p>
-        <p class="text-gray-600 dark:text-gray-300 mb-3">
-          Advanced framework for predictive maintenance using adaptive state-based models for rotating manufacturing equipment.
-        </p>
-        <div class="flex flex-wrap gap-4 text-sm">
-          <span class="bg-gray-600 text-white px-3 py-1 rounded-full">IEEE CASE</span>
-          <span class="bg-dtc-primary text-white px-3 py-1 rounded-full">Joint work with Dow</span>
-          <span class="text-gray-500">Auckland, NZ, August 2023</span>
-          <a href="https://drive.google.com/file/d/1UXRSfwSzKPzE8JpcQcTcdyvzkke9Bnmz/view?usp=drive_link" class="text-dtc-primary hover:underline">View Paper</a>
-        </div>
-      </div>
-      
-      <div class="surface p-6 rounded-lg border-l-4 border-gray-400">
-        <h3 class="text-xl font-bold mb-2">Digital-Twin based Cyber-Attack Detection Framework for Cyber-Physical Manufacturing Systems</h3>
-        <p class="text-sm text-gray-500 dark:text-gray-400 mb-2 italic">
-          E. C. Balta, M. Pease, J. Moyne, K. Barton, and D. M. Tilbury
-        </p>
-        <p class="text-gray-600 dark:text-gray-300 mb-3">
-          Novel cybersecurity framework leveraging digital twin technology for detecting and mitigating cyber attacks in manufacturing systems.
-        </p>
-        <div class="flex flex-wrap gap-4 text-sm">
-          <span class="bg-gray-600 text-white px-3 py-1 rounded-full">IEEE Trans. on ASE</span>
-          <span class="bg-dtc-primary text-white px-3 py-1 rounded-full">Joint work with NIST</span>
-          <span class="text-gray-500">to appear, 2023</span>
-          <a href="https://drive.google.com/file/d/1YJ1YLCx-uEjfVsS7qzvxUjJ9WbvztmDE/view?usp=sharing" class="text-dtc-primary hover:underline">View Paper</a>
-        </div>
-      </div>
-      
-      <div class="surface p-6 rounded-lg border-l-4 border-dtc-primary">
-        <h3 class="text-xl font-bold mb-2">Full Stack Virtual Commissioning: Requirements Framework to Bridge Gaps in Current Virtual Commissioning Process</h3>
-        <p class="text-sm text-gray-500 dark:text-gray-400 mb-2 italic">
-          J. B. Sim, K. N. Shah, M. Saez, J. Abell, Y. Zhou, J. Faris, D. M. Tilbury, and K. Barton
-        </p>
-        <p class="text-gray-600 dark:text-gray-300 mb-3">
-          Comprehensive approach to virtual commissioning using full-stack digital twin implementations for manufacturing systems.
-        </p>
-        <div class="flex flex-wrap gap-4 text-sm">
-          <span class="bg-gray-600 text-white px-3 py-1 rounded-full">ASME MSEC</span>
-          <span class="bg-dtc-primary text-white px-3 py-1 rounded-full">Joint work with General Motors</span>
-          <span class="text-gray-500">Rutgers, NJ, June 2023</span>
-          <a href="https://asmedigitalcollection.asme.org/MSEC/proceedings/MSEC2023/87240/V002T07A016/1168748" class="text-dtc-primary hover:underline">View Paper</a>
-        </div>
-      </div>
-      
-      <div class="surface p-6 rounded-lg border-l-4 border-gray-400">
-        <h3 class="text-xl font-bold mb-2">A Digital Twin Framework for Mechanical System Health State Estimation</h3>
-        <p class="text-sm text-gray-500 dark:text-gray-400 mb-2 italic">
-          M. Toothman, B. Braun, S. J. Bury, M. Dessauer, K. Henderson, S. Phillips, Y. Yixin, D. M. Tilbury, J. Moyne, K. Barton
-        </p>
-        <p class="text-gray-600 dark:text-gray-300 mb-3">
-          Digital twin framework for estimating mechanical system health states in manufacturing environments.
-        </p>
-        <div class="flex flex-wrap gap-4 text-sm">
-          <span class="bg-dtc-secondary text-white px-3 py-1 rounded-full">MECC</span>
-          <span class="bg-dtc-primary text-white px-3 py-1 rounded-full">Joint work with Dow</span>
-          <span class="text-gray-500">Austin, TX, October 2021</span>
-          <a href="https://www.sciencedirect.com/science/article/pii/S2405896321021881" target="_blank" class="text-dtc-primary hover:underline">View Paper</a>
-        </div>
-      </div>
-      
-      <div class="surface p-6 rounded-lg border-l-4 border-gray-400">
-        <h3 class="text-xl font-bold mb-2">An Integrated Framework for Dynamic Manufacturing Planning to Obtain New Line Configurations</h3>
-        <p class="text-sm text-gray-500 dark:text-gray-400 mb-2 italic">
-          L. Poudel, I. Kovalenko, R. Geng, M. Takaharu, Y. Nonaka, N. Takahiro, U. Shota, D. M. Tilbury, and K. Barton
-        </p>
-        <p class="text-gray-600 dark:text-gray-300 mb-3">
-          Integrated framework for dynamic manufacturing planning to achieve new production line configurations using digital twin technologies.
-        </p>
-        <div class="flex flex-wrap gap-4 text-sm">
-          <span class="bg-gray-600 text-white px-3 py-1 rounded-full">IEEE CASE</span>
-          <span class="bg-dtc-primary text-white px-3 py-1 rounded-full">Joint work with Hitachi</span>
-          <span class="text-gray-500">Mexico City, August 2022</span>
-          <a href="https://drive.google.com/file/d/1tyWJNNe4438PtBDE9Fo8zIlbTnwfKxJ7/view?usp=drive_link" target="_blank" class="text-dtc-primary hover:underline">View Paper</a>
-        </div>
-      </div>
-      
-      <div class="surface p-6 rounded-lg border-l-4 border-gray-400">
-        <h3 class="text-xl font-bold mb-2">A Digital Twin Framework for Performance Monitoring and Anomaly Detection in Fused Deposition Modeling</h3>
-        <p class="text-sm text-gray-500 dark:text-gray-400 mb-2 italic">
-          E. Balta, D. Tilbury, and K. Barton
-        </p>
-        <p class="text-gray-600 dark:text-gray-300 mb-3">
-          Digital twin framework for performance monitoring and anomaly detection in additive manufacturing processes, specifically fused deposition modeling.
-        </p>
-        <div class="flex flex-wrap gap-4 text-sm">
-          <span class="bg-gray-600 text-white px-3 py-1 rounded-full">IEEE CASE</span>
-          <span class="text-gray-500">Vancouver, August 2019</span>
-          <a href="https://drive.google.com/file/d/1WjJWML95WlaHUSKwsraxszfcx0tkdgdM/view?usp=drive_link" target="_blank" class="text-dtc-primary hover:underline">View Paper</a>
-        </div>
-      </div>
-      
-      <div class="surface p-6 rounded-lg border-l-4 border-dtc-primary">
-        <h3 class="text-xl font-bold mb-2">Real-time manufacturing machine and system performance monitoring using Internet of Things</h3>
-        <p class="text-sm text-gray-500 dark:text-gray-400 mb-2 italic">
-          Miguel Saez, Francisco Maturana, Kira Barton, and Dawn Tilbury
-        </p>
-        <p class="text-gray-600 dark:text-gray-300 mb-3">
-          Real-time performance monitoring system for manufacturing machines and systems using Internet of Things technologies and digital twin principles.
-        </p>
-        <div class="flex flex-wrap gap-4 text-sm">
-          <span class="bg-dtc-primary text-white px-3 py-1 rounded-full">IEEE Trans. on ASE</span>
-          <span class="bg-dtc-primary text-white px-3 py-1 rounded-full">Joint work with Rockwell Automation</span>
-          <span class="text-gray-500">15(4):1735–1748, October 2018</span>
-          <a href="https://ieeexplore.ieee.org/document/8421016" target="_blank" class="text-dtc-primary hover:underline">View Paper</a>
-        </div>
-      </div>
-      
-      <div class="surface p-6 rounded-lg border-l-4 border-gray-400">
-        <h3 class="text-xl font-bold mb-2">Digital Twin Framework for Reconfiguration Management: Concept & Evaluation</h3>
-        <p class="text-sm text-gray-500 dark:text-gray-400 mb-2 italic">
-          B. Caesar, K. Barton, D. M. Tilbury, A. Fay
-        </p>
-        <p class="text-gray-600 dark:text-gray-300 mb-3">
-          Digital twin framework for managing reconfiguration in manufacturing systems, including concept development and evaluation methodologies.
-        </p>
-        <div class="flex flex-wrap gap-4 text-sm">
-          <span class="bg-gray-600 text-white px-3 py-1 rounded-full">IEEE Access</span>
-          <span class="text-gray-500">vol. 11, pp. 127364-127387, 2023</span>
-          <a href="#" class="text-dtc-primary hover:underline">View Paper</a>
-        </div>
-      </div>
+      ))}
     </div>
   </section>
 

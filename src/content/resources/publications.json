@@ -1,0 +1,104 @@
+{
+  "publications": [
+    {
+      "title": "A Requirements Driven Digital Twin Framework: Specification and Opportunities",
+      "authors": "J. Moyne, Y. Qamsane, E. C. Balta, I. Kovalenko, J. Faris, K. Barton, and D. M. Tilbury",
+      "abstract": "A set of requirements for a Digital Twin (DT) framework has been derived from analysis of DT definitions, DTs in use today, expected DT applications in the near future, and longer-term DT trends and the DT vision in Smart Manufacturing. These requirements include elements of re-usability, interoperability, interchangeability, maintainability, extensibility, and autonomy across the entire DT lifecycle.",
+      "venue": "IEEE Access",
+      "date": "8:107781-107801, June 2020",
+      "url": "https://ieeexplore.ieee.org/document/9109299",
+      "tags": ["IEEE Access"],
+      "featured": true
+    },
+    {
+      "title": "A Methodology to Develop and Implement Digital Twin Solutions for Manufacturing Systems",
+      "authors": "Y. Qamsane, J. Moyne, M. Toothman, I. Kovalenko, E. C. Balta, J. Faris, D. M. Tilbury, and K. Barton",
+      "abstract": "This paper introduces a Digital Twin (DT) solution development methodology as a generic procedure for analyzing and developing DTs for manufacturing systems. A case study illustrates the advantages of the proposed methodology in supporting manufacturing DT solutions.",
+      "venue": "IEEE Access",
+      "date": "9(44247 - 44265), March 2021",
+      "url": "https://ieeexplore.ieee.org/document/9381733",
+      "tags": ["IEEE Access"],
+      "featured": false
+    },
+    {
+      "title": "An Adaptive, State-Based Framework for Fault Prediction in Rotating Equipment",
+      "authors": "M. Toothman, B. Braun, S. J. Bury, J. Moyne, D. M. Tilbury, K. Barton",
+      "abstract": "Advanced framework for predictive maintenance using adaptive state-based models for rotating manufacturing equipment.",
+      "venue": "IEEE CASE",
+      "date": "Auckland, NZ, August 2023",
+      "url": "https://drive.google.com/file/d/1UXRSfwSzKPzE8JpcQcTcdyvzkke9Bnmz/view?usp=drive_link",
+      "tags": ["IEEE CASE", "Joint work with Dow"],
+      "featured": false
+    },
+    {
+      "title": "Digital-Twin based Cyber-Attack Detection Framework for Cyber-Physical Manufacturing Systems",
+      "authors": "E. C. Balta, M. Pease, J. Moyne, K. Barton, and D. M. Tilbury",
+      "abstract": "Novel cybersecurity framework leveraging digital twin technology for detecting and mitigating cyber attacks in manufacturing systems.",
+      "venue": "IEEE Trans. on ASE",
+      "date": "to appear, 2023",
+      "url": "https://drive.google.com/file/d/1YJ1YLCx-uEjfVsS7qzvxUjJ9WbvztmDE/view?usp=sharing",
+      "tags": ["IEEE Trans. on ASE", "Joint work with NIST"],
+      "featured": false
+    },
+    {
+      "title": "Full Stack Virtual Commissioning: Requirements Framework to Bridge Gaps in Current Virtual Commissioning Process",
+      "authors": "J. B. Sim, K. N. Shah, M. Saez, J. Abell, Y. Zhou, J. Faris, D. M. Tilbury, and K. Barton",
+      "abstract": "Comprehensive approach to virtual commissioning using full-stack digital twin implementations for manufacturing systems.",
+      "venue": "ASME MSEC",
+      "date": "Rutgers, NJ, June 2023",
+      "url": "https://asmedigitalcollection.asme.org/MSEC/proceedings/MSEC2023/87240/V002T07A016/1168748",
+      "tags": ["ASME MSEC", "Joint work with General Motors"],
+      "featured": true
+    },
+    {
+      "title": "A Digital Twin Framework for Mechanical System Health State Estimation",
+      "authors": "M. Toothman, B. Braun, S. J. Bury, M. Dessauer, K. Henderson, S. Phillips, Y. Yixin, D. M. Tilbury, J. Moyne, K. Barton",
+      "abstract": "Digital twin framework for estimating mechanical system health states in manufacturing environments.",
+      "venue": "MECC",
+      "date": "Austin, TX, October 2021",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2405896321021881",
+      "tags": ["MECC", "Joint work with Dow"],
+      "featured": false
+    },
+    {
+      "title": "An Integrated Framework for Dynamic Manufacturing Planning to Obtain New Line Configurations",
+      "authors": "L. Poudel, I. Kovalenko, R. Geng, M. Takaharu, Y. Nonaka, N. Takahiro, U. Shota, D. M. Tilbury, and K. Barton",
+      "abstract": "Integrated framework for dynamic manufacturing planning to achieve new production line configurations using digital twin technologies.",
+      "venue": "IEEE CASE",
+      "date": "Mexico City, August 2022",
+      "url": "https://drive.google.com/file/d/1tyWJNNe4438PtBDE9Fo8zIlbTnwfKxJ7/view?usp=drive_link",
+      "tags": ["IEEE CASE", "Joint work with Hitachi"],
+      "featured": false
+    },
+    {
+      "title": "A Digital Twin Framework for Performance Monitoring and Anomaly Detection in Fused Deposition Modeling",
+      "authors": "E. Balta, D. Tilbury, and K. Barton",
+      "abstract": "Digital twin framework for performance monitoring and anomaly detection in additive manufacturing processes, specifically fused deposition modeling.",
+      "venue": "IEEE CASE",
+      "date": "Vancouver, August 2019",
+      "url": "https://drive.google.com/file/d/1WjJWML95WlaHUSKwsraxszfcx0tkdgdM/view?usp=drive_link",
+      "tags": ["IEEE CASE"],
+      "featured": false
+    },
+    {
+      "title": "Real-time manufacturing machine and system performance monitoring using Internet of Things",
+      "authors": "Miguel Saez, Francisco Maturana, Kira Barton, and Dawn Tilbury",
+      "abstract": "Real-time performance monitoring system for manufacturing machines and systems using Internet of Things technologies and digital twin principles.",
+      "venue": "IEEE Trans. on ASE",
+      "date": "15(4):1735-1748, October 2018",
+      "url": "https://ieeexplore.ieee.org/document/8421016",
+      "tags": ["IEEE Trans. on ASE", "Joint work with Rockwell Automation"],
+      "featured": true
+    },
+    {
+      "title": "Digital Twin Framework for Reconfiguration Management: Concept & Evaluation",
+      "authors": "B. Caesar, K. Barton, D. M. Tilbury, A. Fay",
+      "abstract": "Digital twin framework for managing reconfiguration in manufacturing systems, including concept development and evaluation methodologies.",
+      "venue": "IEEE Access",
+      "date": "vol. 11, pp. 127364-127387, 2023",
+      "url": "#",
+      "tags": ["IEEE Access"],
+      "featured": false
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "faculty": [
+    {
+      "name": "Dr. Xun Huan",
+      "university": "University of Michigan",
+      "researchFocus": "Computational methods, uncertainty quantification, machine learning",
+      "website": "https://me.engin.umich.edu/people/faculty/xun-ryan-huan/"
+    },
+    {
+      "name": "Dr. Raed Al Kontar",
+      "university": "University of Michigan",
+      "researchFocus": "Data analytics for IoT systems",
+      "website": "https://ioe.engin.umich.edu/people/al-kontar-raed/"
+    },
+    {
+      "name": "Dr. Z. Morley Mao",
+      "university": "University of Michigan",
+      "researchFocus": "Cybersecurity, data infrastructure",
+      "website": "https://eecs.engin.umich.edu/people/mao-zhuoqing-morley/"
+    },
+    {
+      "name": "Dr. Siqian Shen",
+      "university": "University of Michigan",
+      "researchFocus": "Supply chain network optimization",
+      "website": "https://ioe.engin.umich.edu/people/shen-siqian/"
+    },
+    {
+      "name": "Dr. Farhad Ameri",
+      "university": "Arizona State University",
+      "researchFocus": "Neurosymbolic AI",
+      "website": "https://search.asu.edu/profile/4860219"
+    },
+    {
+      "name": "Dr. Zhengtao Gan",
+      "university": "Arizona State University",
+      "researchFocus": "Multiscale modeling",
+      "website": "https://search.asu.edu/profile/5142230"
+    },
+    {
+      "name": "Dr. Shenghan Guo",
+      "university": "Arizona State University",
+      "researchFocus": "AI in manufacturing",
+      "website": "https://search.asu.edu/profile/4001269"
+    },
+    {
+      "name": "Dr. Ashif Iquebal",
+      "university": "Arizona State University",
+      "researchFocus": "Stochastic inverse modeling",
+      "website": "https://search.asu.edu/profile/3705665"
+    },
+    {
+      "name": "Dr. Feng Ju",
+      "university": "Arizona State University",
+      "researchFocus": "Stochastic modeling",
+      "website": "https://search.asu.edu/profile/2740005"
+    },
+    {
+      "name": "Dr. Rong Pan",
+      "university": "Arizona State University",
+      "researchFocus": "Statistical modeling in manufacturing",
+      "website": "https://search.asu.edu/profile/969256"
+    },
+    {
+      "name": "Dr. George Runger",
+      "university": "Arizona State University",
+      "researchFocus": "Machine learning and statistical methods",
+      "website": "https://search.asu.edu/profile/87655"
+    }
+  ]
+}

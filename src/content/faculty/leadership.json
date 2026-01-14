@@ -1,0 +1,68 @@
+{
+  "universities": [
+    {
+      "name": "University of Michigan",
+      "shortName": "UM",
+      "location": "Ann Arbor, Michigan",
+      "color": "umichblue",
+      "leaders": [
+        {
+          "name": "Dr. Dawn Tilbury",
+          "title": "Ronald D. and Regina C. McNeil Department Chair of Robotics",
+          "description": "Leading digital twin research initiatives and industry partnerships",
+          "email": "tilbury@umich.edu",
+          "image": "/images/leadership/Tilbury.jpg",
+          "role": "primary"
+        },
+        {
+          "name": "Dr. Kira Barton",
+          "title": "Professor, Robotics and Mechanical Engineering",
+          "description": "Specializing in manufacturing systems and IoT integration",
+          "email": "bartonkl@umich.edu",
+          "image": "/images/leadership/Barton.jpg",
+          "role": "secondary"
+        },
+        {
+          "name": "James Moyne",
+          "title": "Research Scientist",
+          "description": "Advanced manufacturing systems and digital twin technologies",
+          "email": "moyne@umich.edu",
+          "image": "/images/leadership/moyne.jpg",
+          "role": "other"
+        }
+      ]
+    },
+    {
+      "name": "Arizona State University",
+      "shortName": "ASU",
+      "location": "Tempe, Arizona",
+      "color": "red-700",
+      "leaders": [
+        {
+          "name": "Dr. Binil Starly",
+          "title": "Director and Professor, School of Manufacturing Systems and Network",
+          "description": "Advanced manufacturing and digital transformation expert",
+          "email": "Binil.Starly@asu.edu",
+          "image": "/images/leadership/starly.png",
+          "role": "primary"
+        },
+        {
+          "name": "Dr. Wenlong Zhang",
+          "title": "Assistant Professor, Mechanical Engineering",
+          "description": "Robotics and intelligent manufacturing systems",
+          "email": "Wenlong.Zhang@asu.edu",
+          "image": "/images/leadership/zhang.jpg",
+          "role": "secondary"
+        },
+        {
+          "name": "Dr. Giulia Pedrielli",
+          "title": "Associate Professor, School of Computing and Augmented Intelligence",
+          "description": "Data analytics and machine learning applications",
+          "email": "Giulia.Pedrielli@asu.edu",
+          "image": "/images/leadership/pedrielli.png",
+          "role": "other"
+        }
+      ]
+    }
+  ]
+}

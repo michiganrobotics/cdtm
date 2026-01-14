@@ -1,9 +1,25 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import leadership from '../content/faculty/leadership.json';
+import researchFacultyData from '../content/faculty/research-faculty.json';
+
+// Helper function to get border color class based on role
+function getBorderColor(role: string): string {
+  switch (role) {
+    case 'primary': return 'border-dtc-primary';
+    case 'secondary': return 'border-dtc-secondary';
+    default: return 'border-gray-400';
+  }
+}
+
+// Helper function to get university background color
+function getUniBgColor(shortName: string): string {
+  return shortName === 'UM' ? 'bg-umichblue' : 'bg-red-700';
+}
 ---
 
 <MainLayout title="Faculty Researchers - Digital Twin Center">
-  
+
   <!-- Header -->
   <section class="max-w-6xl mx-auto px-4 py-16">
     <div class="text-center mb-12">
@@ -23,157 +39,54 @@ import MainLayout from '../layouts/MainLayout.astro';
       <h2 class="text-3xl font-bold font-roboto-condensed text-center mb-12">
         Center <span class="dtc-primary">Leadership</span>
       </h2>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-        <!-- University of Michigan Leaders -->
-        <div class="surface p-8 rounded-lg">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-16 h-16 bg-umichblue rounded-full flex items-center justify-center">
-              <span class="text-white font-bold text-lg">UM</span>
-            </div>
-            <div>
-              <h3 class="text-2xl font-bold dtc-primary">University of Michigan</h3>
-              <p class="text-gray-600 dark:text-gray-300">Ann Arbor, Michigan</p>
-            </div>
-          </div>
-          
-          <div class="space-y-6">
-            <div class="border-l-4 border-dtc-primary pl-4">
-              <div class="flex items-start gap-4 mb-4">
-                <div class="w-16 h-16 overflow-hidden rounded-full bg-gray-200 flex-shrink-0">
-                  <img src="/images/leadership/Tilbury.jpg" alt="Dr. Dawn Tilbury" class="w-full h-full object-cover" 
-                       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                  <div class="w-16 h-16 bg-umichblue rounded-full flex items-center justify-center text-white font-bold text-sm" style="display: none;">DT</div>
-                </div>
-                <div>
-                  <h4 class="text-xl font-bold mb-2">Dr. Dawn Tilbury</h4>
-                  <p class="text-gray-600 dark:text-gray-300 mb-2">Ronald D. and Regina C. McNeil Department Chair of Robotics</p>
-                </div>
-              </div>
-              <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">
-                Leading digital twin research initiatives and industry partnerships
-              </p>
-              <a href="mailto:tilbury@umich.edu" class="text-dtc-primary hover:underline text-sm">
-                tilbury@umich.edu
-              </a>
-            </div>
-            
-            <div class="border-l-4 border-dtc-secondary pl-4">
-              <div class="flex items-start gap-4 mb-4">
-                <div class="w-16 h-16 overflow-hidden rounded-full bg-gray-200 flex-shrink-0">
-                  <img src="/images/leadership/Barton.jpg" alt="Dr. Kira Barton" class="w-full h-full object-cover" 
-                       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                  <div class="w-16 h-16 bg-umichblue rounded-full flex items-center justify-center text-white font-bold text-sm" style="display: none;">KB</div>
-                </div>
-                <div>
-                  <h4 class="text-xl font-bold mb-2">Dr. Kira Barton</h4>
-                  <p class="text-gray-600 dark:text-gray-300 mb-2">Professor, Robotics and Mechanical Engineering</p>
-                </div>
-              </div>
-              <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">
-                Specializing in manufacturing systems and IoT integration
-              </p>
-              <a href="mailto:bartonkl@umich.edu" class="text-dtc-primary hover:underline text-sm">
-                bartonkl@umich.edu
-              </a>
-            </div>
-            
-            <div class="border-l-4 border-gray-400 pl-4">
-              <div class="flex items-start gap-4 mb-4">
-                <div class="w-16 h-16 overflow-hidden rounded-full bg-gray-200 flex-shrink-0">
-                  <img src="/images/leadership/moyne.jpg" alt="James Moyne" class="w-full h-full object-cover" 
-                       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                  <div class="w-16 h-16 bg-umichblue rounded-full flex items-center justify-center text-white font-bold text-sm" style="display: none;">JM</div>
-                </div>
-                <div>
-                  <h4 class="text-xl font-bold mb-2">James Moyne</h4>
-                  <p class="text-gray-600 dark:text-gray-300 mb-2">Research Scientist</p>
-                </div>
-              </div>
-              <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">
-                Advanced manufacturing systems and digital twin technologies
-              </p>
-              <a href="mailto:moyne@umich.edu" class="text-dtc-primary hover:underline text-sm">
-                moyne@umich.edu
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <!-- Arizona State University Leaders -->
-        <div class="surface p-8 rounded-lg">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-16 h-16 bg-red-700 rounded-full flex items-center justify-center">
-              <span class="text-white font-bold text-lg">ASU</span>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        {leadership.universities.map((university) => (
+          <div class="surface p-8 rounded-lg">
+            <div class="flex items-center gap-4 mb-6">
+              <div class={`w-16 h-16 ${getUniBgColor(university.shortName)} rounded-full flex items-center justify-center`}>
+                <span class="text-white font-bold text-lg">{university.shortName}</span>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold dtc-primary">{university.name}</h3>
+                <p class="text-gray-600 dark:text-gray-300">{university.location}</p>
+              </div>
             </div>
-            <div>
-              <h3 class="text-2xl font-bold dtc-primary">Arizona State University</h3>
-              <p class="text-gray-600 dark:text-gray-300">Tempe, Arizona</p>
+
+            <div class="space-y-6">
+              {university.leaders.map((leader) => (
+                <div class={`border-l-4 ${getBorderColor(leader.role)} pl-4`}>
+                  <div class="flex items-start gap-4 mb-4">
+                    <div class="w-16 h-16 overflow-hidden rounded-full bg-gray-200 flex-shrink-0">
+                      <img
+                        src={leader.image}
+                        alt={leader.name}
+                        class="w-full h-full object-cover"
+                        onerror={`this.style.display='none'; this.nextElementSibling.style.display='flex';`}
+                      />
+                      <div
+                        class={`w-16 h-16 ${getUniBgColor(university.shortName)} rounded-full flex items-center justify-center text-white font-bold text-sm`}
+                        style="display: none;"
+                      >
+                        {leader.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                      </div>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold mb-2">{leader.name}</h4>
+                      <p class="text-gray-600 dark:text-gray-300 mb-2">{leader.title}</p>
+                    </div>
+                  </div>
+                  <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">
+                    {leader.description}
+                  </p>
+                  <a href={`mailto:${leader.email}`} class="text-dtc-primary hover:underline text-sm">
+                    {leader.email}
+                  </a>
+                </div>
+              ))}
             </div>
           </div>
-          
-          <div class="space-y-6">
-            <div class="border-l-4 border-dtc-primary pl-4">
-              <div class="flex items-start gap-4 mb-4">
-                <div class="w-16 h-16 overflow-hidden rounded-full bg-gray-200 flex-shrink-0">
-                  <img src="/images/leadership/starly.png" alt="Dr. Binil Starly" class="w-full h-full object-cover" 
-                       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                  <div class="w-16 h-16 bg-red-700 rounded-full flex items-center justify-center text-white font-bold text-sm" style="display: none;">BS</div>
-                </div>
-                <div>
-                  <h4 class="text-xl font-bold mb-2">Dr. Binil Starly</h4>
-                  <p class="text-gray-600 dark:text-gray-300 mb-2">Director and Professor, School of Manufacturing Systems and Network</p>
-                </div>
-              </div>
-              <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">
-                Advanced manufacturing and digital transformation expert
-              </p>
-              <a href="mailto:Binil.Starly@asu.edu" class="text-dtc-primary hover:underline text-sm">
-                Binil.Starly@asu.edu
-              </a>
-            </div>
-            
-            <div class="border-l-4 border-dtc-secondary pl-4">
-              <div class="flex items-start gap-4 mb-4">
-                <div class="w-16 h-16 overflow-hidden rounded-full bg-gray-200 flex-shrink-0">
-                  <img src="/images/leadership/zhang.jpg" alt="Dr. Wenlong Zhang" class="w-full h-full object-cover" 
-                       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                  <div class="w-16 h-16 bg-red-700 rounded-full flex items-center justify-center text-white font-bold text-sm" style="display: none;">WZ</div>
-                </div>
-                <div>
-                  <h4 class="text-xl font-bold mb-2">Dr. Wenlong Zhang</h4>
-                  <p class="text-gray-600 dark:text-gray-300 mb-2">Assistant Professor, Mechanical Engineering</p>
-                </div>
-              </div>
-              <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">
-                Robotics and intelligent manufacturing systems
-              </p>
-              <a href="mailto:Wenlong.Zhang@asu.edu" class="text-dtc-primary hover:underline text-sm">
-                Wenlong.Zhang@asu.edu
-              </a>
-            </div>
-            
-            <div class="border-l-4 border-gray-400 pl-4">
-              <div class="flex items-start gap-4 mb-4">
-                <div class="w-16 h-16 overflow-hidden rounded-full bg-gray-200 flex-shrink-0">
-                  <img src="/images/leadership/pedrielli.png" alt="Dr. Giulia Pedrielli" class="w-full h-full object-cover" 
-                       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                  <div class="w-16 h-16 bg-red-700 rounded-full flex items-center justify-center text-white font-bold text-sm" style="display: none;">GP</div>
-                </div>
-                <div>
-                  <h4 class="text-xl font-bold mb-2">Dr. Giulia Pedrielli</h4>
-                  <p class="text-gray-600 dark:text-gray-300 mb-2">Associate Professor, School of Computing and Augmented Intelligence</p>
-                </div>
-              </div>
-              <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">
-                Data analytics and machine learning applications
-              </p>
-              <a href="mailto:Giulia.Pedrielli@asu.edu" class="text-dtc-primary hover:underline text-sm">
-                Giulia.Pedrielli@asu.edu
-              </a>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   </section>
@@ -185,150 +98,20 @@ import MainLayout from '../layouts/MainLayout.astro';
     </h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- University of Michigan Faculty -->
-      <div class="card-base surface p-6">
-        <h3 class="text-xl font-bold text-center mb-2">Dr. Xun Huan</h3>
-        <p class="text-center text-gray-600 dark:text-gray-300 mb-3">University of Michigan</p>
-        <p class="text-sm text-gray-500 dark:text-gray-400 text-center mb-4">
-          Research focus: Computational methods, uncertainty quantification, machine learning
-        </p>
-        <div class="text-center">
-          <a href="https://me.engin.umich.edu/people/faculty/xun-ryan-huan/" target="_blank" class="text-dtc-primary hover:underline text-sm">
-            Website
-          </a>
+      {researchFacultyData.faculty.map((person) => (
+        <div class="card-base surface p-6">
+          <h3 class="text-xl font-bold text-center mb-2">{person.name}</h3>
+          <p class="text-center text-gray-600 dark:text-gray-300 mb-3">{person.university}</p>
+          <p class="text-sm text-gray-500 dark:text-gray-400 text-center mb-4">
+            Research focus: {person.researchFocus}
+          </p>
+          <div class="text-center">
+            <a href={person.website} target="_blank" class="text-dtc-primary hover:underline text-sm">
+              Website
+            </a>
+          </div>
         </div>
-      </div>
-
-      <div class="card-base surface p-6">
-        <h3 class="text-xl font-bold text-center mb-2">Dr. Raed Al Kontar</h3>
-        <p class="text-center text-gray-600 dark:text-gray-300 mb-3">University of Michigan</p>
-        <p class="text-sm text-gray-500 dark:text-gray-400 text-center mb-4">
-          Research focus: Data analytics for IoT systems
-        </p>
-        <div class="text-center">
-          <a href="https://ioe.engin.umich.edu/people/al-kontar-raed/" target="_blank" class="text-dtc-primary hover:underline text-sm">
-            Website
-          </a>
-        </div>
-      </div>
-
-      <div class="card-base surface p-6">
-        <h3 class="text-xl font-bold text-center mb-2">Dr. Z. Morley Mao</h3>
-        <p class="text-center text-gray-600 dark:text-gray-300 mb-3">University of Michigan</p>
-        <p class="text-sm text-gray-500 dark:text-gray-400 text-center mb-4">
-          Research focus: Cybersecurity, data infrastructure
-        </p>
-        <div class="text-center">
-          <a href="https://eecs.engin.umich.edu/people/mao-zhuoqing-morley/" target="_blank" class="text-dtc-primary hover:underline text-sm">
-            Website
-          </a>
-        </div>
-      </div>
-
-      <div class="card-base surface p-6">
-        <h3 class="text-xl font-bold text-center mb-2">Dr. Siqian Shen</h3>
-        <p class="text-center text-gray-600 dark:text-gray-300 mb-3">University of Michigan</p>
-        <p class="text-sm text-gray-500 dark:text-gray-400 text-center mb-4">
-          Research focus: Supply chain network optimization
-        </p>
-        <div class="text-center">
-          <a href="https://ioe.engin.umich.edu/people/shen-siqian/" target="_blank" class="text-dtc-primary hover:underline text-sm">
-            Website
-          </a>
-        </div>
-      </div>
-
-      <!-- Arizona State University Faculty -->
-      <div class="card-base surface p-6">
-        <h3 class="text-xl font-bold text-center mb-2">Dr. Farhad Ameri</h3>
-        <p class="text-center text-gray-600 dark:text-gray-300 mb-3">Arizona State University</p>
-        <p class="text-sm text-gray-500 dark:text-gray-400 text-center mb-4">
-          Research focus: Neurosymbolic AI
-        </p>
-        <div class="text-center">
-          <a href="https://search.asu.edu/profile/4860219" target="_blank" class="text-dtc-primary hover:underline text-sm">
-            Website
-          </a>
-        </div>
-      </div>
-
-      <div class="card-base surface p-6">
-        <h3 class="text-xl font-bold text-center mb-2">Dr. Zhengtao Gan</h3>
-        <p class="text-center text-gray-600 dark:text-gray-300 mb-3">Arizona State University</p>
-        <p class="text-sm text-gray-500 dark:text-gray-400 text-center mb-4">
-          Research focus: Multiscale modeling
-        </p>
-        <div class="text-center">
-          <a href="https://search.asu.edu/profile/5142230" target="_blank" class="text-dtc-primary hover:underline text-sm">
-            Website
-          </a>
-        </div>
-      </div>
-
-      <div class="card-base surface p-6">
-        <h3 class="text-xl font-bold text-center mb-2">Dr. Shenghan Guo</h3>
-        <p class="text-center text-gray-600 dark:text-gray-300 mb-3">Arizona State University</p>
-        <p class="text-sm text-gray-500 dark:text-gray-400 text-center mb-4">
-          Research focus: AI in manufacturing
-        </p>
-        <div class="text-center">
-          <a href="https://search.asu.edu/profile/4001269" target="_blank" class="text-dtc-primary hover:underline text-sm">
-            Website
-          </a>
-        </div>
-      </div>
-
-      <div class="card-base surface p-6">
-        <h3 class="text-xl font-bold text-center mb-2">Dr. Ashif Iquebal</h3>
-        <p class="text-center text-gray-600 dark:text-gray-300 mb-3">Arizona State University</p>
-        <p class="text-sm text-gray-500 dark:text-gray-400 text-center mb-4">
-          Research focus: Stochastic inverse modeling
-        </p>
-        <div class="text-center">
-          <a href="https://search.asu.edu/profile/3705665" target="_blank" class="text-dtc-primary hover:underline text-sm">
-            Website
-          </a>
-        </div>
-      </div>
-
-      <div class="card-base surface p-6">
-        <h3 class="text-xl font-bold text-center mb-2">Dr. Feng Ju</h3>
-        <p class="text-center text-gray-600 dark:text-gray-300 mb-3">Arizona State University</p>
-        <p class="text-sm text-gray-500 dark:text-gray-400 text-center mb-4">
-          Research focus: Stochastic modeling
-        </p>
-        <div class="text-center">
-          <a href="https://search.asu.edu/profile/2740005" target="_blank" class="text-dtc-primary hover:underline text-sm">
-            Website
-          </a>
-        </div>
-      </div>
-
-      <div class="card-base surface p-6">
-        <h3 class="text-xl font-bold text-center mb-2">Dr. Rong Pan</h3>
-        <p class="text-center text-gray-600 dark:text-gray-300 mb-3">Arizona State University</p>
-        <p class="text-sm text-gray-500 dark:text-gray-400 text-center mb-4">
-          Research focus: Statistical modeling in manufacturing
-        </p>
-        <div class="text-center">
-          <a href="https://search.asu.edu/profile/969256" target="_blank" class="text-dtc-primary hover:underline text-sm">
-            Website
-          </a>
-        </div>
-      </div>
-
-      <div class="card-base surface p-6">
-        <h3 class="text-xl font-bold text-center mb-2">Dr. George Runger</h3>
-        <p class="text-center text-gray-600 dark:text-gray-300 mb-3">Arizona State University</p>
-        <p class="text-sm text-gray-500 dark:text-gray-400 text-center mb-4">
-          Research focus: Machine learning and statistical methods
-        </p>
-        <div class="text-center">
-          <a href="https://search.asu.edu/profile/87655" target="_blank" class="text-dtc-primary hover:underline text-sm">
-            Website
-          </a>
-        </div>
-      </div>
+      ))}
     </div>
 
     <!-- Contact Information -->

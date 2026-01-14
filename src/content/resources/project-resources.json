@@ -1,0 +1,40 @@
+{
+  "resources": [
+    {
+      "title": "Digital Twins Project Summaries",
+      "subtitle": "Project overview document",
+      "description": "Comprehensive overview of current digital twin projects and research initiatives within the center.",
+      "url": "https://drive.google.com/open?id=1ykwJwbtiZhgB_LQ4_lvWt-gDtwY0x-22H9ougrOzFTo",
+      "linkText": "View Document",
+      "icon": "clipboard",
+      "color": "dtc-primary"
+    },
+    {
+      "title": "IUCRC Details",
+      "subtitle": "Center information",
+      "description": "Detailed information about the Industry-University Cooperative Research Center structure and operations.",
+      "url": "#",
+      "linkText": "Download PDF",
+      "icon": "chart",
+      "color": "dtc-secondary"
+    },
+    {
+      "title": "Digital Twin Framework Keynote",
+      "subtitle": "Presentation materials",
+      "description": "Keynote presentation covering the digital twin framework development and implementation strategies.",
+      "url": "#",
+      "linkText": "Download Slides",
+      "icon": "target",
+      "color": "dtc-accent"
+    },
+    {
+      "title": "DT-IUCRC Proposal Kickoff",
+      "subtitle": "Project launch materials",
+      "description": "Initial proposal and kickoff materials for the Digital Twin Industry-University Cooperative Research Center.",
+      "url": "#",
+      "linkText": "View Proposal",
+      "icon": "rocket",
+      "color": "gray-600"
+    }
+  ]
+}
