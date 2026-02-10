@@ -1,10 +1,10 @@
 ---
 
 const menuItems = [
-  { label: "Home", uri: "/dtc/" },
-  { label: "Faculty", uri: "/dtc/faculty" },
-  { label: "Research", uri: "/dtc/research" },
-  { label: "Resources", uri: "/dtc/resources" }
+  { label: "Home", uri: "/" },
+  { label: "Faculty", uri: "/faculty" },
+  { label: "Research", uri: "/research" },
+  { label: "Resources", uri: "/resources" }
 ];
 
 // Active page detection
@@ -19,7 +19,7 @@ const isActive = (itemPath: string) => {
 
   <!-- Left Logo -->
   <div class="ml-2 self-end md:ml-0">
-    <a href="/dtc/" class="block no-underline" aria-label="Home - Digital Twin Center">
+    <a href="/" class="block no-underline" aria-label="Home - Digital Twin Center">
       <div class="flex items-center gap-3">
         <img src={`${import.meta.env.BASE_URL}images/dtc-logo.png`} alt="DTC Logo" class="w-14 h-auto object-contain" />
         <div>

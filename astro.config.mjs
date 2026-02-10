@@ -9,9 +9,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   output: 'static',
 
-  // GitHub Pages configuration
-  site: 'https://dnewms.github.io',
-  base: '/dtc',
+  site: 'https://cdtm-iucrc.org',
 
   integrations: [
     icon(),
@@ -22,7 +20,7 @@ export default defineConfig({
 
   vite: {
     define: {
-      'import.meta.env.BASE_URL': '"/dtc/"',
+      'import.meta.env.BASE_URL': '"/"',
     },
 
     build: {
