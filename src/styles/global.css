@@ -253,30 +253,13 @@
     @apply flex flex-wrap gap-4 justify-center mb-8 md:flex-nowrap pt-10 px-2;
   }
   
-  /* DTC subtitle with double underline */
+  /* DTC subtitle divider — short accent bar */
   .subtitle-double-line-dtc {
-    position: relative;
-    width: 100%;
-    max-width: 500px;
+    width: 60px;
     height: 4px;
-  }
-  
-  .subtitle-double-line-dtc::before,
-  .subtitle-double-line-dtc::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(to right, var(--color-dtc-primary) 0%, var(--color-dtc-primary) 25%, transparent 80%);
-  }
-  
-  .subtitle-double-line-dtc::before {
-    top: 0;
-  }
-  
-  .subtitle-double-line-dtc::after {
-    bottom: 0;
+    border: none;
+    border-radius: 2px;
+    background-color: var(--color-dtc-orange);
   }
 
   .font-roboto {
