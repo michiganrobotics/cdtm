@@ -5,7 +5,7 @@
     "description": "A collaboration between the University of Michigan and Arizona State University, focused on developing digital twin solutions for manufacturing."
   },
   "kickoff": {
-    "sectionTitle": "Center Kick-off Meeting",
+    "sectionTitle": "Center Kick-off",
     "date": "March 25-26, 2026 (U-M)",
     "dateSubtitle": "Join the Industry Advisory Board to attend the upcoming meeting",
     "description": "Receive research updates and vote on new projects",
@@ -72,22 +72,7 @@
     ]
   },
   "greaterContext": {
-    "sectionTitle": "Greater Context",
-    "lead": "Digital Twins (DTs) have become pervasive in the manufacturing industry. Here we adopt the DT definition of [Moyne et al.], that a digital twin is some level of purpose-driven replica of a real thing (the physical twin) and is synchronized with its physical twin (equipment, component, process, product, etc.). Leveraging historical and real-time data, as well as data-driven and first-principles models, DTs in disparate forms have been used to solve manufacturing problems such as predictive maintenance and model-based process control.",
-    "cards": [
-      {
-        "heading": "Potential",
-        "text": "They have the potential to increase productivity and reduce costs, by reducing unscheduled downtime, increasing yield (reducing scrap), optimizing the supply-chain manufacturing ecosystem, and even facilitating reconfiguration of assets for rapid, low-cost virtual commissioning."
-      },
-      {
-        "heading": "Past Approach",
-        "text": "DT solutions have typically been developed in silos, which creates a strain on workforce, solution upkeep and maintenance, security, sustainability."
-      },
-      {
-        "heading": "Current Effort",
-        "text": "A common DT framework and approach has the potential to significantly reduce demands on workforce expertise, improve productivity through cross-training and re-use of existing solutions, streamline maintenance, and improve security and sustainability. The NSF-funded Center for Digital Twins will bring together a group of industry partners and academics for collaborative research to develop DTs across a common framework to help improve manufacturing solutions."
-      }
-    ]
+    "sectionTitle": "Greater Context"
   },
   "iucrc": {
     "sectionTitle": "What is an IUCRC?",
