@@ -1,9 +1,9 @@
 ---
-layout: ../layouts/base.astro
+const { title, description, link } = Astro.props;
 ---
 
 <article class="file-card">
-  <h2>{title}</h2>
-  <p>{description}</p>
-  <a href={fileLink}>View File</a>
+    <h2>{title}</h2>
+    <p>{description}</p>
+    <a href={link}>Learn more</a>
 </article>
