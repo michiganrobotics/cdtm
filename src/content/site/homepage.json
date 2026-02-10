@@ -2,7 +2,11 @@
   "hero": {
     "titleHighlight": "NSF Center for ",
     "subtitle": "Digital Twins in Manufacturing",
-    "description": "A collaboration between the University of Michigan and Arizona State University, focused on developing digital twin solutions for manufacturing."
+    "description": "A collaboration between the University of Michigan and Arizona State University, focused on developing digital twin solutions for manufacturing.",
+    "primaryButtonText": "Express Your Interest",
+    "primaryButtonUrl": "mailto:cdtm-iucrc@umich.edu",
+    "secondaryButtonText": "View Upcoming Meeting",
+    "secondaryButtonUrl": "#kickoff"
   },
   "kickoff": {
     "sectionTitle": "Center Kick-off",

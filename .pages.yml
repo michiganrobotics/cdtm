@@ -28,6 +28,18 @@ content:
           - name: description
             label: Description
             type: text
+          - name: primaryButtonText
+            label: Primary Button Text
+            type: string
+          - name: primaryButtonUrl
+            label: Primary Button URL
+            type: string
+          - name: secondaryButtonText
+            label: Secondary Button Text
+            type: string
+          - name: secondaryButtonUrl
+            label: Secondary Button URL
+            type: string
       - name: kickoff
         label: Kickoff Meeting Section
         type: object

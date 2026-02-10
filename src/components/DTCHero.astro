@@ -7,7 +7,6 @@ const hero = {
   description: '',
   ...homepage.hero,
 };
-const kickoff = homepage.kickoff;
 ---
 
 <section class="relative overflow-hidden" aria-labelledby="hero-heading">
@@ -81,17 +80,17 @@ const kickoff = homepage.kickoff;
 
       <!-- CTAs -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 hero-animate" style="animation-delay: 0.2s">
-        <a href={kickoff.buttonUrl || '#'}
+        <a href={hero.primaryButtonUrl || 'mailto:cdtm-iucrc@umich.edu'}
            class="no-underline inline-flex items-center gap-2 bg-dtc-primary text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
            style="background-color: #D86018;">
-          Express Your Interest
+          {hero.primaryButtonText || 'Express Your Interest'}
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
           </svg>
         </a>
-        <a href="#kickoff"
+        <a href={hero.secondaryButtonUrl || '#kickoff'}
            class="no-underline text-gray-200 hover:text-white font-medium transition-colors border border-white/30 px-6 py-3 rounded-lg hover:border-white/60">
-          View Upcoming Meeting
+          {hero.secondaryButtonText || 'View Upcoming Meeting'}
         </a>
       </div>
     </div>
