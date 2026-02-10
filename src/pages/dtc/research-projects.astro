@@ -1,0 +1,10 @@
+---
+import FileCard from '../components/FileCard.astro';
+import { researchFiles } from '../data/researchFiles.js';
+---
+
+<main>
+  {researchFiles.map(file => (
+    <FileCard {...file} />
+  ))}
+</main>
