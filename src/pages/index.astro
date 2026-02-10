@@ -81,7 +81,7 @@ const thrustColors = [
           <!-- Left: Event Info -->
           <div class="bg-umichblue p-8 sm:p-10 text-white flex flex-col justify-center">
             <h2 id="kickoff-heading" class="text-3xl font-bold font-roboto-condensed mb-6">
-              Center Kick-off Meeting
+              {kickoff.sectionTitle}
             </h2>
             <div class="flex items-center gap-4 mb-4">
               <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: #D86018;" aria-hidden="true">
@@ -127,7 +127,7 @@ const thrustColors = [
     <div class="max-w-4xl mx-auto px-4">
       <div class="text-center mb-12">
         <h2 id="timeline-heading" class="text-4xl font-bold font-roboto-condensed mb-4">
-          Center Timeline
+          {timeline.title}
         </h2>
         <div class="subtitle-double-line-dtc mx-auto mb-6" aria-hidden="true"></div>
       </div>
@@ -178,7 +178,7 @@ const thrustColors = [
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
         <h2 id="research-heading" class="text-4xl font-bold font-roboto-condensed mb-4">
-          Research Thrusts
+          {researchThrusts.sectionTitle}
         </h2>
         <div class="subtitle-double-line-dtc mx-auto mb-6" aria-hidden="true"></div>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -225,12 +225,12 @@ const thrustColors = [
     </div>
   </section>
 
-  <!-- Member Benefits -->
+  <!-- Industry Benefits -->
   <section class="py-16 sm:py-20" aria-labelledby="benefits-heading">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
         <h2 id="benefits-heading" class="text-4xl font-bold font-roboto-condensed mb-4">
-          Member Benefits
+          {industryBenefits.sectionTitle}
         </h2>
         <div class="subtitle-double-line-dtc mx-auto mb-6" aria-hidden="true"></div>
       </div>
@@ -276,7 +276,7 @@ const thrustColors = [
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
         <h2 id="context-heading" class="text-4xl font-bold font-roboto-condensed mb-4">
-          Greater Context
+          {greaterContext.sectionTitle}
         </h2>
         <div class="subtitle-double-line-dtc mx-auto mb-6" aria-hidden="true"></div>
       </div>
@@ -322,7 +322,7 @@ const thrustColors = [
 
         <div class="relative z-10">
           <h2 id="iucrc-heading" class="text-3xl font-bold font-roboto-condensed mb-6">
-            What is an <span class="text-maize">IUCRC</span>?
+            {iucrc.sectionTitle}
           </h2>
           <p class="text-lg leading-relaxed text-gray-200 max-w-3xl">
             {iucrc.content}
