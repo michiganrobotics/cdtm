@@ -63,7 +63,7 @@ import documentsData from '../content/resources/documents.json';
               <span class="font-semibold">{resource.title}</span>
               <span class="text-sm text-gray-500 dark:text-gray-400 ml-2">{resource.subtitle}</span>
             </div>
-            {resource.url && resource.url !== '#' && (
+            {resource.url && (
               <a href={resource.url} target="_blank" rel="noopener noreferrer" class="text-dtc-primary hover:underline text-sm whitespace-nowrap ml-4">
                 {resource.linkText || 'View'}<span class="sr-only"> (opens in new tab)</span>
               </a>

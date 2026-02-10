@@ -9,7 +9,7 @@
       <!-- About Section -->
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <img src="/dtc/images/dtc-logo.png" alt="DTC Logo" class="w-8 h-8 object-contain" />
+          <img src={`${import.meta.env.BASE_URL}images/dtc-logo.png`} alt="DTC Logo" class="w-8 h-8 object-contain" />
           <div>
             <div class="font-roboto-condensed font-bold text-lg">Center for Digital Twins in Manufacturing</div>
             <div class="text-xs text-gray-300">IUCRC</div>
@@ -55,9 +55,9 @@
             </a>
           </li>
           <li class="pt-2">
-            <a href="https://www.nsf.gov" class="text-gray-300 hover:text-white transition-colors text-xs">
+            <p class="text-gray-300 text-xs">
               This material is based in part upon work supported by the National Science Foundation under Grant Number 2436195. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
-            </a>
+            </p>
           </li>
         </ul>
       </div>

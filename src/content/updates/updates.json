@@ -1,19 +1,29 @@
 {
   "updates": [
     {
-      "heading": "Center Kick-off Meeting Scheduled for March 2026",
-      "link": "https://docs.google.com/forms/d/1JRPqkCWbC3N1AGY6f8_7sGxzpH-oWdaJPEH5lm1vOKk/viewform?edit_requested=true",
+      "heading": "UIDP Webinar Recording: Learn more about the Center",
+      "link": "https://uidp.org/webinar/the-center-for-digital-twins-in-manufacturing-an-nsf-iucrc-overview/",
       "type": "center"
     },
     {
-      "heading": "NSF Award for the Center Received June 2025",
-      "link": "https://www.nsf.gov",
+      "heading": "Join the Industry Advisory Board to attend the upcoming meeting: March 25-26, 2026 (U-M)",
+      "link": "https://sites.google.com/umich.edu/digitaltwincenter/home?authuser=0#h.d23ndxqmcg9n",
       "type": "center"
     },
     {
-      "heading": "Topic Explorations Underway - January 2026",
+      "heading": "Receive research updates and vote on new projects",
       "link": null,
       "type": "center"
+    },
+    {
+      "heading": "Project Planning Workshop: October 9, 2025 (ASU) - View Session Materials",
+      "link": "https://sites.google.com/umich.edu/digitaltwincenter/home?authuser=0#h.xat17n4dmd2z",
+      "type": "center"
+    },
+    {
+      "heading": "Center to Boost Digital Twin Efficiency in Manufacturing - The American Society of Mechanical Engineers (October 14, 2025)",
+      "link": "https://www.asme.org/topics-resources/content/center-to-boost-digital-twin-efficiency-in-manufacturing",
+      "type": "news"
     }
   ]
 }
