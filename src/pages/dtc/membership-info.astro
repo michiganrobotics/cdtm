@@ -1,0 +1,14 @@
+---
+import FileCard from '../../components/FileCard.astro';
+import membershipFiles from '../../data/membershipFiles.js';
+
+---
+
+<div>
+  <h1>Membership Information</h1>
+  <div class="file-cards">
+    {membershipFiles.map(file => (
+      <FileCard file={file} />
+    ))}
+  </div>
+</div>
