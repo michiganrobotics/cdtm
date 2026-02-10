@@ -5,8 +5,8 @@
     "description": "A collaboration between the University of Michigan and Arizona State University, focused on developing digital twin solutions for manufacturing.",
     "primaryButtonText": "Express Your Interest",
     "primaryButtonUrl": "mailto:cdtm-iucrc@umich.edu",
-    "secondaryButtonText": "View Upcoming Meeting",
-    "secondaryButtonUrl": "#kickoff"
+    "secondaryButtonText": "Email Your Interest",
+    "secondaryButtonUrl": "mailto:cdtm-iucrc@umich.edu"
   },
   "kickoff": {
     "sectionTitle": "Center Kick-off",
