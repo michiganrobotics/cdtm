@@ -19,17 +19,19 @@ const updates = updatesData.updates;
         <h2 class="text-2xl font-bold font-roboto-condensed mb-4">Latest Updates</h2>
         <div class="divide-y divide-gray-200 dark:divide-gray-700 surface rounded-lg">
           {updates.map((update) => (
-            <div class="flex items-start gap-3 px-5 py-3">
-              <span class={`text-xs font-semibold uppercase px-2 py-1 rounded whitespace-nowrap mt-0.5 ${update.type === 'center' ? 'bg-dtc-primary text-white' : 'bg-dtc-secondary text-white'}`}>
-                {update.type === 'center' ? 'Center' : 'News'}
+            <div class="px-5 py-3">
+              <span class={`text-xs font-semibold uppercase px-2 py-0.5 rounded ${update.type === 'center' ? 'bg-dtc-primary text-white' : 'bg-dtc-secondary text-white'}`}>
+                {update.type === 'center' ? 'Center Update' : 'News Mention'}
               </span>
-              {update.link ? (
-                <a href={update.link} class="text-sm text-gray-800 dark:text-gray-200 hover:dtc-primary transition-colors">
-                  {update.heading}
-                </a>
-              ) : (
-                <span class="text-sm text-gray-800 dark:text-gray-200">{update.heading}</span>
-              )}
+              <div class="mt-1">
+                {update.link ? (
+                  <a href={update.link} class="text-sm text-gray-800 dark:text-gray-200 hover:dtc-primary transition-colors">
+                    {update.heading}
+                  </a>
+                ) : (
+                  <span class="text-sm text-gray-800 dark:text-gray-200">{update.heading}</span>
+                )}
+              </div>
             </div>
           ))}
         </div>
@@ -57,7 +59,7 @@ const updates = updatesData.updates;
         <p class="text-gray-600 dark:text-gray-300 mb-6">
           {kickoff.description}
         </p>
-        <a href={kickoff.buttonUrl || '#'} class="inline-block bg-dtc-secondary text-white px-8 py-4 rounded-lg font-bold text-xl hover:bg-opacity-90 hover:shadow-lg transform hover:scale-105 transition-all duration-200 shadow-md">
+        <a href={kickoff.buttonUrl || '#'} class="no-underline inline-block bg-dtc-secondary text-white px-8 py-4 rounded-lg font-bold text-xl hover:bg-opacity-90 hover:shadow-lg transform hover:scale-105 transition-all duration-200 shadow-md">
           {kickoff.buttonText}
         </a>
       </div>

@@ -6,12 +6,14 @@
         {
           "id": "1.1",
           "title": "Definition of Digital Twin (DT) and DT Framework",
-          "description": "Establishes foundational concepts and structural approaches for digital twins."
+          "description": "Establishes foundational concepts and structural approaches for digital twins.",
+          "link": "https://drive.google.com/file/d/1AOHaP_vPTld5jx7gUOzscX2aIMkbewFY/view"
         },
         {
           "id": "1.2",
           "title": "Quantifying and Reducing Uncertainty in Digital Twins",
-          "description": "Focuses on uncertainty quantification methodologies within DT systems."
+          "description": "Focuses on uncertainty quantification methodologies within DT systems.",
+          "link": "https://drive.google.com/file/d/1staWyIUNW3NtzrUfmfBiSVra9vLsX59P/view"
         }
       ]
     },
@@ -21,17 +23,20 @@
         {
           "id": "2.1",
           "title": "Reduce Time & Cost in Commissioning & Reconfiguration",
-          "description": "Addresses virtual commissioning to streamline manufacturing setup and adaptation."
+          "description": "Addresses virtual commissioning to streamline manufacturing setup and adaptation.",
+          "link": "https://drive.google.com/file/d/1yTj2_BjWl-8AhB_9IeH0L3FbmuV-x25F/view"
         },
         {
           "id": "2.2",
           "title": "Digital Twins for Human-Robot Collaboration",
-          "description": "Explores DT applications in collaborative manufacturing environments with robotic systems."
+          "description": "Explores DT applications in collaborative manufacturing environments with robotic systems.",
+          "link": "https://drive.google.com/file/d/1CoLwonc2SUqiCG0K1Hy8GpNHi2UnmZEQ/view"
         },
         {
           "id": "2.3",
           "title": "Aggregation of Digital Twins to Improve KPIs",
-          "description": "Investigates how multiple DTs can be integrated to enhance key performance indicators."
+          "description": "Investigates how multiple DTs can be integrated to enhance key performance indicators.",
+          "link": "https://drive.google.com/file/d/1RiMV02bpWXLp0prrHBVqRubfyJjFlT8L/view"
         }
       ]
     },
@@ -41,17 +46,20 @@
         {
           "id": "3.1",
           "title": "Digital Twins Workforce Enabling Tools",
-          "description": "Develops solutions to support worker capabilities through digital twin technology."
+          "description": "Develops solutions to support worker capabilities through digital twin technology.",
+          "link": "https://drive.google.com/file/d/1F5hl9ReOlXfN19ioiEucJlFvHATeQhCF/view"
         },
         {
           "id": "3.2",
           "title": "Digital Twin Developer, User & Training Environment",
-          "description": "Creates platforms for DT development, operation, and skill development."
+          "description": "Creates platforms for DT development, operation, and skill development.",
+          "link": "https://drive.google.com/file/d/1ZAI9vGwLTRyiOr5WzejmYCIaaroqRHa8/view"
         },
         {
           "id": "3.3",
           "title": "AutoTwin: Self-generating Self-executing DT Models",
-          "description": "Develops autonomous digital twin systems that can generate and execute themselves."
+          "description": "Develops autonomous digital twin systems that can generate and execute themselves.",
+          "link": "https://drive.google.com/file/d/150qqvCxBgtFBZ79dk_brf66bwbDvUK0X/view"
         }
       ]
     }

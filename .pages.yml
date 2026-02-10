@@ -124,6 +124,32 @@ content:
             label: Content
             type: text
 
+  # Updates
+  - name: updates
+    label: Updates
+    type: file
+    path: src/content/updates/updates.json
+    fields:
+      - name: updates
+        label: Updates
+        type: object
+        list: true
+        fields:
+          - name: heading
+            label: Heading
+            type: string
+            required: true
+          - name: link
+            label: Link URL
+            type: string
+          - name: type
+            label: Type
+            type: select
+            options:
+              values:
+                - center
+                - news
+
   # Center Leadership
   - name: leadership
     label: Center Leadership
