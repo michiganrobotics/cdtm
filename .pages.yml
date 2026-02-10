@@ -109,10 +109,21 @@ content:
           - name: sectionTitle
             label: Section Title
             type: string
-          - name: paragraphs
-            label: Paragraphs
+          - name: lead
+            label: Lead Paragraph
             type: text
+          - name: cards
+            label: Context Cards
+            type: object
             list: true
+            fields:
+              - name: heading
+                label: Heading
+                type: string
+                required: true
+              - name: text
+                label: Text
+                type: text
       - name: iucrc
         label: IUCRC Explanation Section
         type: object
@@ -174,6 +185,9 @@ content:
           - name: color
             label: Brand Color Class
             type: string
+          - name: logo
+            label: University Logo
+            type: image
           - name: leaders
             label: Leaders
             type: object
