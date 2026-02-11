@@ -3,18 +3,18 @@
     "titleHighlight": "NSF Center for ",
     "subtitle": "Digital Twins in Manufacturing",
     "description": "A collaboration between the University of Michigan and Arizona State University, focused on developing digital twin solutions for manufacturing.",
-    "primaryButtonText": "Express Your Interest",
+    "primaryButtonText": "View upcoming meeting",
     "primaryButtonUrl": "mailto:cdtm-iucrc@umich.edu",
-    "secondaryButtonText": "Email Your Interest",
-    "secondaryButtonUrl": "mailto:cdtm-iucrc@umich.edu"
+    "secondaryButtonText": "Email your interest",
+    "secondaryButtonUrl": "mailto:cdtm-iucrc@umich.edu?subject=Interested%20in%20finding%20out%20more%20about%20CDTM"
   },
   "kickoff": {
     "sectionTitle": "Center Kick-off",
     "date": "March 25-26, 2026 (U-M)",
     "dateSubtitle": "Join the Industry Advisory Board to attend the upcoming meeting",
     "description": "Receive research updates and vote on new projects",
-    "buttonText": "Express Your Interest",
-    "buttonUrl": "mailto:cdtm-iucrc@umich.edu"
+    "buttonText": "Express your interest",
+    "buttonUrl": "mailto:cdtm-iucrc@umich.edu?subject=Interested%20in%20finding%20out%20more%20about%20CDTM"
   },
   "timeline": {
     "title": "Center Timeline",
